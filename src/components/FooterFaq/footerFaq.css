@@ -1,0 +1,53 @@
+.FooterFaq{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+}
+.footer{
+    bottom: 0;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    text-align: center;
+    background: #eee;
+    /* height: 50px; */
+    width: 100%;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+#line{
+    width: 90%;
+
+}
+
+.footer img{
+    max-width:  28px;
+    max-height: 28px;
+    
+}
+
+.sociais img{
+    width: 35px;
+    height: 35px;
+}
+
+
+
+.footer a{
+    color: black;
+    padding: 10px;
+}
+
+
+.content a{
+    font-family: 'Baloo 2', cursive;
+
+}
+
+.content a :hover{
+    color: #1ed760;
+}

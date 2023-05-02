@@ -1,0 +1,79 @@
+.HomeMajorContent {
+    max-height: 100vh;
+    overflow-y: scroll;
+    background: #1e1e1e;
+
+    ::-webkit-scrollbar {
+        height: 10px;
+        background-color: rgb(48, 47, 47);
+        border-radius: 15px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #18181800;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: rgb(95, 95, 95);
+        border-radius: 15px;
+    }
+
+    & &__header {
+        position: sticky;
+        top: 0%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 12px;
+        background-color: #181818;
+        z-index: 10000;
+        margin-bottom: 20px;
+    }
+    & &__list-arrows,
+    & &__list-options {
+        display: flex;
+    }
+
+    & &__button-arrow,
+    &__button-option {
+        color: #a7a7a7;
+        background: #181818;
+        border: transparent 0 solid;
+        font-size: 16px;
+        font-weight: bold;
+        margin: 6px;
+
+        > .separator {
+            color: #ffffff;
+            cursor: default;
+        }
+
+        > .option {
+            text-decoration: none;
+            color: #a7a7a7;
+        }
+
+        > .option:hover {
+            color: white;
+        }
+    }
+
+    & &__playlists {
+        height: calc(100% - 62px);
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgb(48, 47, 47);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #18181800;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(95, 95, 95);
+    border-radius: 10px;
+}

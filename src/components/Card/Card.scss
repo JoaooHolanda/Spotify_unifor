@@ -1,0 +1,89 @@
+.Card {
+    & &__playlistCard {
+        width: 241.5px;
+        height: 328.7px;
+        margin: 10px 14px;
+        background: #181818;
+        padding: 16px;
+        position: relative;
+        transition: background-color 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        border-radius: 16px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        content: '';
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    & &__playlistCard:hover {
+        opacity: 85%;
+    }
+
+    & &__infoCard {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+    }
+
+    & &__faceCard {
+        height: 180px;
+        width: 100%;
+        gap: 18px;
+        display: relative;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    & &__picCard {
+        display: flex;
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    & &__info {
+        color: azure;
+        display: block;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    & &__card-tittle {
+        text-align: left;
+        justify-content: left;
+    }
+
+    & &__icons {
+        display: flex;
+        flex-direction: row;
+    }
+
+    & &__autor {
+        color: gray;
+        opacity: 75%;
+        margin-top: 8px;
+
+        width: 180px;
+        text-align: left;
+    }
+
+    & &__playIcon {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        right: 0px;
+        margin-top: 8px;
+        visibility: hidden;
+    }
+
+    & &__playIcon:hover {
+        visibility: visible;
+    }
+}

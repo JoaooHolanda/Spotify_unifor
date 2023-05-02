@@ -1,0 +1,102 @@
+.Home {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+    width: 100%;
+    height: 100vh;
+
+    .HomeContainer {
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+
+    .HomeMajorContent {
+        height: 100vh;
+        width: 100%;
+        background: #1e1e1e;
+
+        & &__header {
+            position: sticky;
+            top: 0%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 12px;
+            background-color: #181818;
+            z-index: 10000;
+            margin-bottom: 20px;
+        }
+        & &__list-arrows,
+        & &__list-options {
+            display: flex;
+        }
+
+        & &__button-arrow,
+        &__button-option {
+            color: #a7a7a7;
+            background: #181818;
+            border: transparent 0 solid;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 6px;
+
+            > .separator {
+                color: #ffffff;
+                cursor: default;
+            }
+
+            > .option {
+                text-decoration: none;
+                color: #a7a7a7;
+            }
+
+            > .option:hover {
+                color: white;
+            }
+        }
+
+        .PlaylistDetail {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 30px;
+
+            .PlaylistDetail-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .PlaylistDetail__title {
+                color: white;
+            }
+
+            .Card__faceCard {
+                height: 25%;
+                width: 25%;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+
+            .Card__picCard {
+                display: flex;
+                width: 100%;
+                height: 100%;
+                border-radius: 8px;
+            }
+        }
+
+        .Musicas {
+            .ListaMusicas {
+                .musica {
+                    .music-title {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

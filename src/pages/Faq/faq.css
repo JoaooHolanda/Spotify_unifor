@@ -1,0 +1,66 @@
+.accordion-button:not(.collapsed) {
+  color: #1ed760;
+}
+
+h2 {
+  font-family: "Baloo 2", bold;
+}
+
+h2  {
+  color: #1ed760;
+}
+.describe {
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  font-family: "Baloo 2", bold;
+}
+.flexbox {
+  display: flex;
+  /* height: ; */
+  justify-content: center;
+  align-items: center;
+  /* padding: 40px; */
+  flex-direction: column;
+}
+
+.container2 {
+  width: 70%;
+  height: 100%;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.title h1 {
+  /* margin-bottom: -19px; */
+  color: #1ed760;
+  font-family: "Baloo 2", bold;
+}
+
+.subs {
+  color: black;
+  display: flex;
+  width: 70%;
+  justify-content: start;
+  font-family: "Baloo 2", cursive;
+}
+
+/* Minimo de tamanho */
+@media only screen and (max-width: 359px) {
+  .title {
+    text-align: center;
+  }
+}
+/* Tela Normal */
+@media only screen and (min-width: 359px) {
+  .arrow {
+    visibility: hidden;
+  }
+}
