@@ -30,8 +30,8 @@ export default function Login() {
     setEmail(event.target.value);
   });
 
-  useEffect(async () => {
-    const fetchedData = await axios.get(URL);
+  useEffect(() => {
+    const fetchedData = axios.get(URL);
     console.log(fetchedData);
     const fetchedEmails = [];
     const fetchedSenhas = [];
