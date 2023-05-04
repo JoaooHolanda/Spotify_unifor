@@ -6,8 +6,10 @@ import "./login.css";
 import Input from "../../components/Input";
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const paginacao = useNavigate();
   const links = [
     { label: "Home", link: "/" },
     { label: "FAQ", link: "/Faq" },
@@ -20,9 +22,6 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  const [emailsList, setEmailsList] = useState([]);
-  const [senhasList, setSenhasList] = useState([]);
-
   const onChangeSenhaHandler = useCallback((event) => {
     setSenha(event.target.value);
   });
@@ -31,27 +30,41 @@ export default function Login() {
   });
 
   useEffect(() => {
-    const fetchedData = axios.get(URL);
-    console.log(fetchedData);
-    const fetchedEmails = [];
-    const fetchedSenhas = [];
-
-    for (const key in fetchedData.data) {
-      fetchedEmails.push(fetchedData.data[key].email);
-      fetchedSenhas.push(fetchedData.data[key].senha);
-    }
-
-    setEmailsList((prevArray) => {
-      return [...prevArray, fetchedEmails];
-    });
-    setSenhasList((prevArray) => {
-      return [...prevArray, fetchedSenhas];
-    });
+    // const fetchedData = axios.get(URL);
+    // console.log(fetchedData);
+    // const fetchedEmails = [];
+    // const fetchedSenhas = [];
+    // for (const key in fetchedData.data) {
+    //   fetchedEmails.push(fetchedData.data[key].email);
+    //   fetchedSenhas.push(fetchedData.data[key].senha);
+    // }
+    // setEmailsList((prevArray) => {
+    //   return [...prevArray, fetchedEmails];
+    // });
+    // setSenhasList((prevArray) => {
+    //   return [...prevArray, fetchedSenhas];
+    // });
   }, []);
 
   const onEnterAttempt = useCallback(() => {
-    if (emailsList.contains(email) && senhasList.contains(senha))
-      console.log("Entrou");
+    axios
+      .get("http://localhost:3000/users")
+      .then((res) => {
+        const data = res.data;
+        console.log(data);
+
+        const foundUser = data.filter(
+          (user) => user.email == email && user.password == senha
+        );
+        console.log(foundUser);
+        if (foundUser.length != 0) {
+          localStorage.setItem("loginUser", JSON.stringify(...foundUser));
+          paginacao("/Home");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   });
 
   return (
