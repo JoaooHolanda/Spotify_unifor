@@ -43,6 +43,9 @@
   justify-content: space-around;
   width: 100%;
 }
+.input_radio:focus {
+  background-color: yellow;
+}
 
 .input_radio input {
   margin: 10px;

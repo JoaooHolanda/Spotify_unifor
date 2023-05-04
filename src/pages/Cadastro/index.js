@@ -51,7 +51,7 @@ const Cadastro = () => {
       });
     document.getElementById("cadForm").reset();
     // alert("Cadastrado com sucesso!");
-    // paginacao("/Home");
+    paginacao("/Home");
   }
 
   /* let btn = document.getElementById('revelaSenha');
