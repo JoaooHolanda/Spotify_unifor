@@ -31,7 +31,8 @@ export default function Login() {
   });
 
   useEffect(() => {
-    const fetchedData = axios.get(URL);
+    const fetchData = async () => 
+    {const fetchedData = await axios.get(URL);
     console.log(fetchedData);
     const fetchedEmails = [];
     const fetchedSenhas = [];
@@ -46,7 +47,8 @@ export default function Login() {
     });
     setSenhasList((prevArray) => {
       return [...prevArray, fetchedSenhas];
-    });
+    });}
+    fetchData();
   }, []);
 
   const onEnterAttempt = useCallback(() => {
