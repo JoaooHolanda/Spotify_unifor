@@ -30,8 +30,9 @@ export default function Login() {
     setEmail(event.target.value);
   });
 
-  useEffect(async () => {
-    const fetchedData = await axios.get(URL);
+  useEffect(() => {
+    const fetchData = async () => 
+    {const fetchedData = await axios.get(URL);
     console.log(fetchedData);
     const fetchedEmails = [];
     const fetchedSenhas = [];
@@ -46,7 +47,8 @@ export default function Login() {
     });
     setSenhasList((prevArray) => {
       return [...prevArray, fetchedSenhas];
-    });
+    });}
+    fetchData();
   }, []);
 
   const onEnterAttempt = useCallback(() => {
