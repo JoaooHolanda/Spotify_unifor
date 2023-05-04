@@ -40,7 +40,6 @@ const HomeMajorContent = () => {
                                                 ? 'option'
                                                 : 'separator'
                                         }
-                                        target="_blank"
                                     >
                                         {option[0]}
                                     </Link>

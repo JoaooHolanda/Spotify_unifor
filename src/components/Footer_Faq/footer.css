@@ -1,0 +1,21 @@
+/* Ajeitar recursividade */
+
+
+    
+.footer{
+    margin-top:20px;
+    font-family: 'Baloo 2', bold;
+    width: 100%;
+}
+
+footer a{
+    text-decoration: none;
+}
+footer p:hover{
+    text-decoration: none;
+    color: #1ed760;
+}
+
+.p-4{
+    width: 100%;
+}

@@ -6,7 +6,7 @@ export const pics = [
         source: 'https://i.pinimg.com/564x/16/36/3c/16363c2185780e00c0cbdaa927207e32.jpg',
         title: 'This is Daisy and the Six',
         description: 'Musicas de Daisy Jones and the Six',
-        musicas: [
+         musicas: [
             {
                 title: 'musica1',
                 thumbnail: '',

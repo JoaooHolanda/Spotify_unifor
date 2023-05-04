@@ -2,8 +2,8 @@ import "./faq.css";
 import React from "react";
 import hamburguer from "../../assets/images/plus.svg";
 import Header from "../../components/Header";
-import Footer_faq from "../../components/FooterFaq";
 import Accordion from "react-bootstrap/Accordion";
+import Footer_faq from '../../components/Footer_Faq/Footer_Faq'
 
 export default function Faq() {
   const links = [
@@ -77,8 +77,11 @@ export default function Faq() {
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
+          
         </div>
       </div>
+      <Footer_faq />
     </div>
+    
   );
 }

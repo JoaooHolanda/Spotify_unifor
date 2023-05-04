@@ -6,6 +6,7 @@ import { linkOptions } from '../../pages/Home/HomeConstants';
 import Footer from '../Footer/Footer';
 import SideBar from '../SideBar/SideBar';
 import './PlaylistDetail.scss';
+import SearchBar from '../Filter/SearchBar';
 
 const PlaylistDetail = () => {
     const { id } = useParams();
@@ -74,30 +75,7 @@ const PlaylistDetail = () => {
                             </p>
                         </div>
                         <div className="Musicas">
-                            <ul className="ListaMusicas">
-                                {details.musicas.map(musica => {
-                                    return (
-                                        <li
-                                            key={musica.title}
-                                            className="musica"
-                                        >
-                                            <p className="music-title">
-                                                {musica.title}
-                                            </p>
-                                            <audio controls="controls">
-                                                <source
-                                                    src={musica.file}
-                                                    type="audio/mpeg"
-                                                />
-                                                <source
-                                                    src={musica.file}
-                                                    type="audio/ogg"
-                                                />
-                                            </audio>
-                                        </li>
-                                    );
-                                })}
-                            </ul>
+                            <SearchBar/>
                         </div>
                     </div>
                 </div>
