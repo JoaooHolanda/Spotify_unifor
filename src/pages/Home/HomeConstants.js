@@ -26,6 +26,7 @@ export const linkOptions = [
 
 const user = JSON.parse(localStorage.getItem("loginUser"));
 console.log("sa", user);
+
 export const linkOptionsLogin = [
   [
     "Premium",
@@ -39,5 +40,5 @@ export const linkOptionsLogin = [
     true,
   ],
   ["|", "#", false],
-  [user.name, "/EditUser", false],
+  [user && user.name, "/EditUser", false],
 ];
