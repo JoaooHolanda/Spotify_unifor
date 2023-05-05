@@ -9,6 +9,8 @@ export default function Input({
   options,
   name,
   required,
+  value,
+  disable,
 }) {
   const [selectedValue, setSelectedValue] = useState("");
 
@@ -25,8 +27,9 @@ export default function Input({
         <label className="input_label">{label}</label>
         <div className="input_radio">
           {options.map((option) => (
-            <label key={option.value}>
+            <label for={option.value} key={option.value}>
               <input
+                id={option.value}
                 name={name}
                 checked={selectedValue == option.value}
                 type="radio"
@@ -47,11 +50,11 @@ export default function Input({
         <label className="input_label">{label}</label>
 
         <input
+          disabled={disable}
           name={name}
           type={type}
-          onChange={(e) => {
-            onChange(e);
-          }}
+          value={value}
+          onChange={onChange}
           placeholder={placeholder}
           required={required}
         />
