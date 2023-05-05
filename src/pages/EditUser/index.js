@@ -12,18 +12,18 @@ export default function EditUser() {
   ];
   const user = JSON.parse(localStorage.getItem("loginUser"));
   const [name, setName] = useState(user.name);
+  const [password, setPassword] = useState(user.password);
   const [date, setDate] = useState(user.date);
-  const [radio, setRadio] = useState({
-    masculino: "Masculino"
-  })
+  const [gender, setGender] = useState(user.gender);
 
   const paginacao = useNavigate();
 
-  // useEffect(() => {
-  //   var elemento = document.getElementById(user.gender);
-  //   console.log(elemento);
-  //   elemento.checked = true;
-  // }, []);
+  useEffect(() => {
+    var elemento = document.getElementById(user.gender);
+    console.log(elemento.checked);
+    console.log(user.gender);
+    elemento.checked = true;
+  }, []);
 
   function Logout() {
     localStorage.removeItem("loginUser");
@@ -32,7 +32,7 @@ export default function EditUser() {
   function handleSubmit(e) {
     e.preventDefault();
     console.log("asad", e);
-    
+
     // let masculino = document.getElementById("Masculino");
     // let feminino = document.getElementById("Feminino");
     // let outros = document.getElementById("Outros");
@@ -43,10 +43,11 @@ export default function EditUser() {
     // console.log(gender[0].value);
     const body = {
       ...user,
-      name,  
+      gender,
+      name,
       date,
     };
-    console.log("kahsbash",body);
+    console.log("kahsbash", body);
     axios.put(`http://localhost:3000/users/${user.id}`, body).then((res) => {
       console.log(res);
       localStorage.removeItem("loginUser");
@@ -68,7 +69,6 @@ export default function EditUser() {
               name="email"
               type="email"
               label="Email"
-              placeholder="Insira seu e-mail."
               required
             />
             <Input
@@ -77,7 +77,6 @@ export default function EditUser() {
               name="name"
               type="text"
               label="Nome"
-              placeholder="Insira seu e-mail."
               required
             />
             <Input
@@ -86,15 +85,21 @@ export default function EditUser() {
               name="name"
               type="date"
               label="Data"
-              placeholder="Insira seu e-mail."
+              required
+            />
+            <Input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              name="name"
+              type="text"
+              label="Senha"
               required
             />
 
             <div className="radio">
               <div className="options_radio">
                 <input
-                  onClick={()=>setRadio({masculino:true
-                  ,feminino:false,naobinario:false, outros:false})}
+                  onClick={() => setGender("Masculino")}
                   type="radio"
                   id="Masculino"
                   name="gender"
@@ -104,8 +109,7 @@ export default function EditUser() {
               </div>
               <div className="options_radio">
                 <input
-                           onClick={()=>setRadio({masculino:false
-                            ,feminino:true,naobinario:false, outros:false})}
+                  onClick={() => setGender("Feminino")}
                   type="radio"
                   id="Feminino"
                   name="gender"
@@ -115,8 +119,7 @@ export default function EditUser() {
               </div>
               <div className="options_radio">
                 <input
-                           onClick={()=>setRadio({masculino:false
-                            ,feminino:false,naobinario:true, outros:false})}
+                  onClick={() => setGender("NaoBinario")}
                   type="radio"
                   id="NaoBinario"
                   name="gender"
@@ -125,14 +128,19 @@ export default function EditUser() {
                 <label for="NaoBinario">Não Binario</label>
               </div>
               <div className="options_radio">
-                <input            onClick={()=>setRadio({masculino:false
-                  ,feminino:false,naobinario:false, outros:true})} type="radio" id="Outros" name="gender" value="Outros" />
+                <input
+                  onClick={() => setGender("Outros")}
+                  type="radio"
+                  id="Outros"
+                  name="gender"
+                  value="Outros"
+                />
                 <label for="Outros">Outros</label>
               </div>
             </div>
             <div className="button_submit_content">
               <button type="submit" className="button_submit">
-                Editar
+                EDITAR
               </button>
             </div>
             <div className="button_submit_content">
@@ -141,7 +149,7 @@ export default function EditUser() {
                 type="submit"
                 className="button_exit"
               >
-                Sair
+                DESLOGAR
               </button>
             </div>
           </form>

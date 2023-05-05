@@ -6,7 +6,7 @@
       "name": "test",
       "password": "1234",
       "date": "01/01/2000",
-      "gender": "masculino"
+      "gender": "Masculino"
     },
     {
       "id": 2,
@@ -14,45 +14,15 @@
       "name": "test2",
       "password": "1234",
       "date": "01/01/2000",
-      "gender": "masculino"
+      "gender": "Masculino"
     },
     {
       "email": "saulo@hotmail.com",
       "name": "Saulo",
       "password": "1234",
       "date": "2023-05-25",
-      "gender": "3",
-      "id": 3
-    },
-    {
-      "email": "Test3@gmail.com",
-      "name": "TESSTT",
-      "password": "122345",
-      "date": "2023-05-17",
-      "gender": "Não binário",
-      "id": 4
-    },
-    {
-      "id": 5,
-      "name": "SauloAs",
-      "email": "saulo@gmail.com",
-      "date": "2023-05-09",
       "gender": "Masculino",
-      "password": "1234"
-    },
-    {
-      "id": 6,
-      "name": "Pabloooo",
-      "email": "pabloguedes@gmail.com",
-      "date": "2022-11-16",
-      "password": "123456"
-    },
-    {
-      "name": "sauloaaaa",
-      "date": "2023-06-01",
-      "id": 7,
-      "email": "saulo4@gmail.com",
-      "password": "1234"
+      "id": 3
     }
   ]
 }

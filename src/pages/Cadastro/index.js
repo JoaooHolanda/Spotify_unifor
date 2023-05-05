@@ -123,9 +123,8 @@ const Cadastro = () => {
               options={[
                 { value: "Masculino", label: "Masculino" },
                 { value: "Feminino", label: "Feminino" },
-                { value: "Não binário", label: "Não binário" },
+                { value: "NaoBinário", label: "Não binário" },
                 { value: "Outros", label: "Outros" },
-                { value: "Prefiro não dizer", label: "Prefiro não dizer" },
               ]}
               label="Qual é o seu gênero?"
             />
