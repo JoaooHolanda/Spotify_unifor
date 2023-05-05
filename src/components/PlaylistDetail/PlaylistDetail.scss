@@ -62,21 +62,23 @@
             height: 100%;
             display: flex;
             align-items: center;
-            padding: 30px;
-
+            flex-direction: column;
+            padding: 20px;
+        
             .PlaylistDetail-wrapper {
                 display: flex;
+                
                 flex-direction: column;
                 align-items: center;
             }
 
             .PlaylistDetail__title {
-                color: white;
+                color: #1ed760;
             }
 
             .Card__faceCard {
-                height: 25%;
-                width: 25%;
+                height: 200px;
+                width: 200px;
                 border-radius: 8px;
                 overflow: hidden;
             }
@@ -90,10 +92,15 @@
         }
 
         .Musicas {
+            padding:10px ;        
             .ListaMusicas {
+                
                 .musica {
+            
                     .music-title {
-                        color: white;
+                        display: flex;
+                        justify-content: flex-start;
+                        color: #ffffff;
                     }
                 }
             }

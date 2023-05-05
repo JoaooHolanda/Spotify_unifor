@@ -1,4 +1,7 @@
 import music from '../../assets/musicas/EminemftDidoStan.mp3';
+import musicMock from '../../assets/musicas/MockingBird.mp3'
+import musicAmor from '../../assets/musicas/Amor de Chocolate .mp3'
+import musicmomento from '../../assets/musicas/Sing For The Moment .mp3'
 
 export const pics = [
     {
@@ -8,42 +11,37 @@ export const pics = [
         description: 'Musicas de Daisy Jones and the Six',
          musicas: [
             {
-                title: 'musica1',
+                title: 'Mockinbird - Eminem',
+                thumbnail: '',
+                file: musicMock,
+            },
+            {
+                title: 'Amor de Chocolate - Naldo Benny',
+                thumbnail: '',
+                file: musicAmor,
+            },
+            {
+                title: 'Sing for the Moment - Eminem',
+                thumbnail: '',
+                file: musicmomento,
+            },
+            {
+                title: 'Monster - Eminem',
                 thumbnail: '',
                 file: music,
             },
             {
-                title: 'musica2',
+                title: 'Vampiro - Matuê',
                 thumbnail: '',
                 file: music,
             },
             {
-                title: 'musica3',
-                thumbnail: '',
-                file: music,
-            },
-            {
-                title: 'musica4',
-                thumbnail: '',
-                file: music,
-            },
-            {
-                title: 'musica5',
-                thumbnail: '',
-                file: music,
-            },
-            {
-                title: 'musica6',
+                title: 'Quer Voar - Matuê',
                 thumbnail: '',
                 file: music,
             },
             {
                 title: 'musica7',
-                thumbnail: '',
-                file: music,
-            },
-            {
-                title: 'musica8',
                 thumbnail: '',
                 file: music,
             },
@@ -56,19 +54,19 @@ export const pics = [
         description: 'Musicas de Imagine Dragons e The Killers etc',
         musicas: [
             {
-                title: 'musica1',
+                title: 'Mockinbird - Eminem',
                 thumbnail: '',
-                file: music,
+                file: musicMock,
             },
             {
-                title: 'musica2',
+                title: 'Amor de Chocolate - Naldo Benny',
                 thumbnail: '',
-                file: music,
+                file: musicAmor,
             },
             {
-                title: 'musica3',
+                title: 'Sing for the Moment - Eminem',
                 thumbnail: '',
-                file: music,
+                file: musicmomento,
             },
         ],
     },
@@ -79,19 +77,19 @@ export const pics = [
         description: 'Musicas de Daisy Jones and the Six',
         musicas: [
             {
-                title: 'musica1',
+                title: 'Mockinbird - Eminem',
                 thumbnail: '',
-                file: music,
+                file: musicMock,
             },
             {
-                title: 'musica2',
+                title: 'Amor de Chocolate - Naldo Benny',
                 thumbnail: '',
-                file: music,
+                file: musicAmor,
             },
             {
-                title: 'musica3',
+                title: 'Sing for the Moment - Eminem',
                 thumbnail: '',
-                file: music,
+                file: musicmomento,
             },
         ],
     },
@@ -102,19 +100,19 @@ export const pics = [
         description: 'Musicas de Imagine Dragons e The Killers etc',
         musicas: [
             {
-                title: 'musica1',
+                title: 'Mockinbird - Eminem',
                 thumbnail: '',
-                file: music,
+                file: musicMock,
             },
             {
-                title: 'musica2',
+                title: 'Amor de Chocolate - Naldo Benny',
                 thumbnail: '',
-                file: music,
+                file: musicAmor,
             },
             {
-                title: 'musica3',
+                title: 'Sing for the Moment - Eminem',
                 thumbnail: '',
-                file: music,
+                file: musicmomento,
             },
         ],
     },
@@ -125,19 +123,19 @@ export const pics = [
         description: 'Musicas de Daisy Jones and the Six',
         musicas: [
             {
-                title: 'musica1',
+                title: 'Mockinbird - Eminem',
                 thumbnail: '',
-                file: music,
+                file: musicMock,
             },
             {
-                title: 'musica2',
+                title: 'Amor de Chocolate - Naldo Benny',
                 thumbnail: '',
-                file: music,
+                file: musicAmor,
             },
             {
-                title: 'musica3',
+                title: 'Sing for the Moment - Eminem',
                 thumbnail: '',
-                file: music,
+                file: musicmomento,
             },
         ],
     },
@@ -148,19 +146,19 @@ export const pics = [
         description: 'Musicas de Imagine Dragons e The Killers etc',
         musicas: [
             {
-                title: 'musica1',
+                title: 'Mockinbird - Eminem',
                 thumbnail: '',
-                file: music,
+                file: musicMock,
             },
             {
-                title: 'musica2',
+                title: 'Amor de Chocolate - Naldo Benny',
                 thumbnail: '',
-                file: music,
+                file: musicAmor,
             },
             {
-                title: 'musica3',
+                title: 'Sing for the Moment - Eminem',
                 thumbnail: '',
-                file: music,
+                file: musicmomento,
             },
         ],
     },
@@ -171,19 +169,19 @@ export const pics = [
         description: 'Musicas de Daisy Jones and the Six',
         musicas: [
             {
-                title: 'musica1',
+                title: 'Mockinbird - Eminem',
                 thumbnail: '',
-                file: music,
+                file: musicMock,
             },
             {
-                title: 'musica2',
+                title: 'Amor de Chocolate - Naldo Benny',
                 thumbnail: '',
-                file: music,
+                file: musicAmor,
             },
             {
-                title: 'musica3',
+                title: 'Sing for the Moment - Eminem',
                 thumbnail: '',
-                file: music,
+                file: musicmomento,
             },
         ],
     },
@@ -194,19 +192,19 @@ export const pics = [
         description: 'Musicas de Imagine Dragons e The Killers etc',
         musicas: [
             {
-                title: 'musica1',
+                title: 'Mockinbird - Eminem',
                 thumbnail: '',
-                file: music,
+                file: musicMock,
             },
             {
-                title: 'musica2',
+                title: 'Amor de Chocolate - Naldo Benny',
                 thumbnail: '',
-                file: music,
+                file: musicAmor,
             },
             {
-                title: 'musica3',
+                title: 'Sing for the Moment - Eminem',
                 thumbnail: '',
-                file: music,
+                file: musicmomento,
             },
         ],
     },
@@ -217,19 +215,19 @@ export const pics = [
         description: 'Musicas de Daisy Jones and the Six',
         musicas: [
             {
-                title: 'musica1',
+                title: 'Mockinbird - Eminem',
                 thumbnail: '',
-                file: music,
+                file: musicMock,
             },
             {
-                title: 'musica2',
+                title: 'Amor de Chocolate - Naldo Benny',
                 thumbnail: '',
-                file: music,
+                file: musicAmor,
             },
             {
-                title: 'musica3',
+                title: 'Sing for the Moment - Eminem',
                 thumbnail: '',
-                file: music,
+                file: musicmomento,
             },
         ],
     },
@@ -240,19 +238,19 @@ export const pics = [
         description: 'Musicas de Imagine Dragons e The Killers etc',
         musicas: [
             {
-                title: 'musica1',
+                title: 'Mockinbird - Eminem',
                 thumbnail: '',
-                file: music,
+                file: musicMock,
             },
             {
-                title: 'musica2',
+                title: 'Amor de Chocolate - Naldo Benny',
                 thumbnail: '',
-                file: music,
+                file: musicAmor,
             },
             {
-                title: 'musica3',
+                title: 'Sing for the Moment - Eminem',
                 thumbnail: '',
-                file: music,
+                file: musicmomento,
             },
         ],
     },
