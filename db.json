@@ -23,6 +23,45 @@
       "date": "2023-05-25",
       "gender": "Masculino",
       "id": 3
+    },
+    {
+      "email": "pajguedes@gmail.com",
+      "name": "Pabloguedes",
+      "password": "1234",
+      "date": "1995-01-02",
+      "gender": "Masculino",
+      "playlists": [
+        {
+          "title": "Play1Teste",
+          "source": "https://i.pinimg.com/564x/16/36/3c/16363c2185780e00c0cbdaa927207e32.jpg",
+          "description": "descricao",
+          "musics": [
+            "Mockinbird - Eminem",
+            "Amor de Chocolate - Naldo Benny",
+            "Sing for the Moment - Eminem",
+            "Quer Voar - Matuê"
+          ]
+        },
+        {
+          "title": "Play2Teste",
+          "source": "https://i.pinimg.com/564x/4a/27/6b/4a276b09a526b82bbf763cf3249dbc1d.jpg",
+          "description": "desc2",
+          "musics": [
+            "Mockinbird - Eminem",
+            "Monster - Eminem"
+          ]
+        },
+        {
+          "title": "Play3",
+          "source": "url",
+          "description": "desc",
+          "musics": [
+            "Quer Voar - Matuê",
+            "Sing for the Moment - Eminem"
+          ]
+        }
+      ],
+      "id": 4
     }
   ]
 }

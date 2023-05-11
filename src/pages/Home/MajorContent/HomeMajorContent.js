@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { playlistTitles } from "../../../components/Card/CardConstants";
 import Playlist from "../../../components/Playlist/Playlist";
@@ -7,9 +7,14 @@ import { linkOptions, linkOptionsLogin } from "../HomeConstants";
 import "./HomeMajorContent.scss";
 
 const HomeMajorContent = () => {
+  const [userPlaylists, setUserPlaylists] = useState();
   let links = linkOptions;
-  
+
   let user = JSON.parse(localStorage.getItem("loginUser"));
+
+  useEffect(() => {
+    setUserPlaylists(user?.playlists);
+  }, []);
 
   if (user) {
     links = linkOptionsLogin(user.name);
@@ -46,9 +51,19 @@ const HomeMajorContent = () => {
         </ul>
       </div>
       <div className="HomeMajorContent__playlists">
-        {playlistTitles.map((title) => {
-          return <Playlist title={title} key={title} />;
-        })}
+        {userPlaylists?.length > 0 ? (
+          <Playlist
+            title={"Minhas Playlists"}
+            key={"Minhas playlists"}
+            isUserPlaylist={true}
+          />
+        ) : (
+          playlistTitles.map((title) => {
+            return (
+              <Playlist title={title} key={title} isUserPlaylist={false} />
+            );
+          })
+        )}
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ export const pics = [
         source: 'https://i.pinimg.com/564x/16/36/3c/16363c2185780e00c0cbdaa927207e32.jpg',
         title: 'This is Daisy and the Six',
         description: 'Musicas de Daisy Jones and the Six',
-         musicas: [
+         musics: [
             {
                 title: 'Mockinbird - Eminem',
                 thumbnail: '',
@@ -52,7 +52,7 @@ export const pics = [
         source: 'https://i.pinimg.com/564x/4a/27/6b/4a276b09a526b82bbf763cf3249dbc1d.jpg',
         title: 'This is Imagine Dragons',
         description: 'Musicas de Imagine Dragons e The Killers etc',
-        musicas: [
+        musics: [
             {
                 title: 'Mockinbird - Eminem',
                 thumbnail: '',
@@ -75,7 +75,7 @@ export const pics = [
         source: 'https://i.pinimg.com/564x/16/36/3c/16363c2185780e00c0cbdaa927207e32.jpg',
         title: 'This is Daisy and the Six',
         description: 'Musicas de Daisy Jones and the Six',
-        musicas: [
+        musics: [
             {
                 title: 'Mockinbird - Eminem',
                 thumbnail: '',
@@ -98,7 +98,7 @@ export const pics = [
         source: 'https://i.pinimg.com/564x/4a/27/6b/4a276b09a526b82bbf763cf3249dbc1d.jpg',
         title: 'This is Imagine Dragons',
         description: 'Musicas de Imagine Dragons e The Killers etc',
-        musicas: [
+        musics: [
             {
                 title: 'Mockinbird - Eminem',
                 thumbnail: '',
@@ -121,7 +121,7 @@ export const pics = [
         source: 'https://i.pinimg.com/564x/16/36/3c/16363c2185780e00c0cbdaa927207e32.jpg',
         title: 'This is Daisy and the Six',
         description: 'Musicas de Daisy Jones and the Six',
-        musicas: [
+        musics: [
             {
                 title: 'Mockinbird - Eminem',
                 thumbnail: '',
@@ -144,7 +144,7 @@ export const pics = [
         source: 'https://i.pinimg.com/564x/4a/27/6b/4a276b09a526b82bbf763cf3249dbc1d.jpg',
         title: 'This is Imagine Dragons',
         description: 'Musicas de Imagine Dragons e The Killers etc',
-        musicas: [
+        musics: [
             {
                 title: 'Mockinbird - Eminem',
                 thumbnail: '',
@@ -167,7 +167,7 @@ export const pics = [
         source: 'https://i.pinimg.com/564x/16/36/3c/16363c2185780e00c0cbdaa927207e32.jpg',
         title: 'This is Daisy and the Six',
         description: 'Musicas de Daisy Jones and the Six',
-        musicas: [
+        musics: [
             {
                 title: 'Mockinbird - Eminem',
                 thumbnail: '',
@@ -190,7 +190,7 @@ export const pics = [
         source: 'https://i.pinimg.com/564x/4a/27/6b/4a276b09a526b82bbf763cf3249dbc1d.jpg',
         title: 'This is Imagine Dragons',
         description: 'Musicas de Imagine Dragons e The Killers etc',
-        musicas: [
+        musics: [
             {
                 title: 'Mockinbird - Eminem',
                 thumbnail: '',
@@ -213,7 +213,7 @@ export const pics = [
         source: 'https://i.pinimg.com/564x/16/36/3c/16363c2185780e00c0cbdaa927207e32.jpg',
         title: 'This is Daisy and the Six',
         description: 'Musicas de Daisy Jones and the Six',
-        musicas: [
+        musics: [
             {
                 title: 'Mockinbird - Eminem',
                 thumbnail: '',
@@ -236,7 +236,7 @@ export const pics = [
         source: 'https://i.pinimg.com/564x/4a/27/6b/4a276b09a526b82bbf763cf3249dbc1d.jpg',
         title: 'This is Imagine Dragons',
         description: 'Musicas de Imagine Dragons e The Killers etc',
-        musicas: [
+        musics: [
             {
                 title: 'Mockinbird - Eminem',
                 thumbnail: '',

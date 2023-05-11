@@ -1,0 +1,36 @@
+.PlaylistModal {
+    &__main {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    &__content {
+        width: 60%;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__button-submit {
+        margin-top: 5%;
+        background-color: #12bd75;
+        width: 15rem;
+        color: #ffffff;
+        border-left-width: 0px;
+        border-right-width: 0px;
+        border-top-width: 0px;
+        border-bottom-width: 3px;
+        font-size: 1rem;
+        font-weight: bold;
+        padding: 0.75rem 1.5rem;
+        /* border: 2px solid black; */
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &__button-submit:hover {
+        background-color: #3eac7c;
+        border-bottom-width: 1px;
+    }
+}

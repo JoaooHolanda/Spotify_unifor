@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import './Card.scss';
 
-function Card({ source, title, description, id }) {
+function Card({ playlist, id }) {
     const paginate = useNavigate();
-
+    
     const handleClick = id => {
         paginate(`/playlist/${id}`);
     };
@@ -16,16 +16,16 @@ function Card({ source, title, description, id }) {
                 <div className="Card__infoCard">
                     <div className="Card__faceCard">
                         <img
-                            src={source}
+                            src={playlist.source}
                             alt="capa01"
                             className="Card__picCard"
                         />
                     </div>
                     <div className="Card__info">
-                        <h3 className="Card__tittle"> {title}</h3>
+                        <h3 className="Card__tittle"> {playlist.title}</h3>
 
                         <div className="Card__icons">
-                            <p className="Card__autor">{description}</p>
+                            <p className="Card__autor">{playlist.description}</p>
                             <img
                                 src="https://i.pinimg.com/564x/c8/c7/ae/c8c7ae54be452a0c46b9c8a52cd12a4a.jpg"
                                 alt="icon"

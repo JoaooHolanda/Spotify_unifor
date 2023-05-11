@@ -38,6 +38,7 @@ const Cadastro = () => {
       password: infoCad.senha,
       date: infoCad.date,
       gender: infoCad.genero,
+      playlists: [],
     };
 
     console.log(body);

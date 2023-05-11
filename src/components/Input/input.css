@@ -43,6 +43,13 @@
   justify-content: space-around;
   width: 100%;
 }
+.input_checkbox {
+  display: grid;
+  grid-template-columns: 32% 32% 32%;
+  gap: 4%;
+  margin-top: 5%;
+}
+
 .input_radio:focus {
   background-color: yellow;
 }

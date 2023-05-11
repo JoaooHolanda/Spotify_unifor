@@ -44,6 +44,28 @@ export default function Input({
     );
   }
 
+  if (type === "checkbox") {
+    return (
+      <div className="input_content">
+        <label className="input_label">{label}</label>
+        <div className="input_checkbox">
+          {options.map((option) => (
+            <label for={option.value} key={option.value}>
+              <input
+                id={option.value}
+                name={name}
+                type="checkbox"
+                value={option.value}
+                onChange={onChange}
+              />
+              {option.label}
+            </label>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="input_container">
       <div className="input_content">
