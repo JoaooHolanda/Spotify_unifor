@@ -2,15 +2,14 @@ import Card from "../Card/Card";
 import { pics } from "../Card/CardConstants";
 import "./Playlist.scss";
 
-function Playlist({ title, isUserPlaylist }) {
-  if (isUserPlaylist) {
-    let userPlaylists = JSON.parse(localStorage.getItem("loginUser")).playlists;
+function PlaylistsContainer({ title, playlists }) {
+  if (!!playlists) {
     return (
       <div className="Playlist">
         <h1 className="Playlist__title">{title}</h1>
         <div className="Playlist__card-container">
-          {userPlaylists.map((element, index) => {
-            return <Card playlist={element} id={index + 1} key={index} />;
+          {playlists.map((element, index) => {
+            return <Card playlist={element} id={index + 1} key={index + 1} isUserPlaylist={true}/>;
           })}
         </div>
       </div>
@@ -22,11 +21,11 @@ function Playlist({ title, isUserPlaylist }) {
       <h1 className="Playlist__title">{title}</h1>
       <div className="Playlist__card-container">
         {pics.map((element) => {
-          return <Card playlist={element} id={element.id} key={element.id} />;
+          return <Card playlist={element} id={element.id} key={element.id} isUserPlaylist={false}/>;
         })}
       </div>
     </div>
   );
 }
 
-export default Playlist;
+export default PlaylistsContainer;

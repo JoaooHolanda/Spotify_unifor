@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { pics } from "../Card/CardConstants";
 
@@ -7,20 +7,37 @@ import Footer from "../Footer/Footer";
 import SideBar from "../SideBar/SideBar";
 import "./PlaylistDetail.scss";
 import SearchBar from "../Filter/SearchBar";
+import HomeHeader from "../HomeHeader";
+
+import { getUserPlaylistDetail } from "../../util/http";
 
 const PlaylistDetail = () => {
+  const [playlistDetails, setPlaylistDetails] = useState([]);
+  const [user, setUser] = useState(null);
   const { id } = useParams();
 
-  let user = JSON.parse(localStorage.getItem("loginUser"));
-  let links = linkOptions;
+  useEffect(() => {
+    const fetchedUser = JSON.parse(localStorage.getItem("loginUser"));
+    async function fetchPlaylist(fetchedUser) {
+      getUserPlaylistDetail(fetchedUser._id, id - 1).then((res) => {
+        setPlaylistDetails(res);
+      });
+    }
+    if (!!fetchedUser) {
+      setUser(fetchedUser);
+      fetchPlaylist(fetchedUser);
+    } else {
+      const details = pics.find((pic) => {
+        return pic.id === parseInt(id);
+      });
+      setPlaylistDetails(details);
+    }
+  }, []);
 
-  let details = pics.find((pic) => {
-    return pic.id === parseInt(id);
-  });
+  let links = linkOptions;
 
   if (user) {
     links = linkOptionsLogin(user.name);
-    details = user.playlists[id - 1];
   }
 
   return (
@@ -28,53 +45,20 @@ const PlaylistDetail = () => {
       <div className="HomeContainer">
         <SideBar />
         <div className="HomeMajorContent">
-          <div className="HomeMajorContent__header">
-            <ul className="HomeMajorContent__list-arrows">
-              <li className="HomeMajorContent__arrow">
-                <button className="HomeMajorContent__button-arrow">
-                  &larr;
-                </button>
-              </li>
-              <li>
-                <button className="HomeMajorContent__button-arrow">
-                  &rarr;
-                </button>
-              </li>
-            </ul>
-            <ul className="HomeMajorContent__list-options">
-              {links.map((option) => {
-                console.log(option);
-                return (
-                  <li className="HomeMajorContent__option" key={option[0]}>
-                    <button
-                      className="HomeMajorContent__button-option"
-                      disabled={option[0] !== "|"}
-                    >
-                      <Link
-                        to={option[1]}
-                        className={option[0] !== "|" ? "option" : "separator"}
-                      >
-                        {option[0]}
-                      </Link>
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+          <HomeHeader user={user} />
           <div className="PlaylistDetail">
             <div className="PlaylistDetail-wrapper">
               <div className="Card__faceCard">
                 <img
-                  src={details.source}
+                  src={playlistDetails.source}
                   alt="capa01"
                   className="Card__picCard"
                 />
               </div>
-              <p className="PlaylistDetail__title">{details.title}</p>
+              <p className="PlaylistDetail__title">{playlistDetails.title}</p>
             </div>
             <div className="Musicas">
-              <SearchBar />
+              <SearchBar musics={playlistDetails}/>
             </div>
           </div>
         </div>

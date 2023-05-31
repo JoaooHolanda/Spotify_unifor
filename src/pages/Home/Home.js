@@ -16,7 +16,6 @@ const Home = () => {
     if (!!fetchedUser) {
       setUser(fetchedUser);
     }
-    // console.log(fetchedUser);
   }, []);
 
   if (openPlaylistModal) {

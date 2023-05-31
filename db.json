@@ -36,9 +36,6 @@
           "source": "https://i.pinimg.com/564x/16/36/3c/16363c2185780e00c0cbdaa927207e32.jpg",
           "description": "descricao",
           "musics": [
-            "Mockinbird - Eminem",
-            "Amor de Chocolate - Naldo Benny",
-            "Sing for the Moment - Eminem",
             "Quer Voar - Matuê"
           ]
         },
@@ -62,6 +59,22 @@
         }
       ],
       "id": 4
+    },
+    {
+      "email": "saulo22@gmail.com",
+      "name": "saulo",
+      "password": "1234",
+      "date": "2023-05-17",
+      "gender": "Feminino",
+      "playlists": [
+        {
+          "title": "qualquer coisa",
+          "source": "https://i.pinimg.com/564x/16/36/3c/16363c2185780e00c0cbdaa927207e32.jpg",
+          "description": "cccacaocja",
+          "musics": []
+        }
+      ],
+      "id": 5
     }
   ]
 }

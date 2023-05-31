@@ -1,77 +1,90 @@
-import { React } from "react";
+import { React, useCallback, useEffect, useState } from "react";
 import { pics } from "../Card/CardConstants";
+import axios from "axios";
 
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-import './List.css';
+import "./List.css";
+import { editUser } from "../../util/http";
 
-function List(props) {
+function List({ input, musics }) {
   const { id } = useParams();
-  const user = JSON.parse(localStorage.getItem("loginUser"));
+  const [user, setUser] = useState(null);
+  const [playlist, setPlaylist] = useState([]);
+  const paginacao = useNavigate();
 
-  let playlistAtual = pics.find((playlist) => playlist.id == id);
-
-  if (user) {
-    playlistAtual = user.playlists[id - 1];
-  }
-
-  const details = playlistAtual.musics?.filter((pic) => {
-    if (props.input === "") {
-      return pic;
+  useEffect(() => {
+    const storedUser = JSON.parse(localStorage.getItem("loginUser"));
+    if (storedUser) {
+      setUser(storedUser);
+      setPlaylist(() => {
+        return details(musics);
+      });
+    } else {
+      const systemMusics = pics.find((playlist) => playlist.id == id).musics;
+      setPlaylist(() => {
+        return details(systemMusics);
+      });
     }
-    //return the item which contains the user input
-    else {
-      return pic.title.toLowerCase().includes(props.input);
-    }
-  });
+  }, [input, musics]);
+
+  const details = useCallback(
+    (musics) => {
+      return musics?.filter((music) => {
+        if (input === "") {
+          return music;
+        }
+        //return the item which contains the user input
+        else {
+          return music.title.toLowerCase().includes(input);
+        }
+      });
+    },
+    [playlist, input]
+  );
   //create a new array by filtering the original array
 
-  const findFileByMusicName = (musicName) => {
-    const music = pics[0].musics.find((music) => {
-      return music.title === musicName;
-    });
-    return music?.file;
-  };
+  function removeMusic(index) {
+    const userPlaylist = user.playlists[id - 1].musicas;
+    console.log(userPlaylist);
+    // const filteredPlaylists
+    // playlists[id - 1].musicas.splice(index, 1);
+    // console.log(playlists);
+    // const body = {
+    //   playlists,
+    // };
 
-  if (user) {
-    return (
-      <ul className="ListaMusicas">
-        {details.map((item) => {
-          return (
-            <li key={item} className="musica">
-              <p className="music-title">{item}</p>
-              <div className="music-display-container">
-                <audio controls="controls">
-                  <source
-                    id="musicshow"
-                    src={findFileByMusicName(item)}
-                    type="audio/mpeg"
-                  />
-                  <source
-                    id="musicshow"
-                    src={findFileByMusicName(item)}
-                    type="audio/ogg"
-                  />
-                </audio>
-                <button className="remove-btn">-</button>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
-    );
+    // editUser(user._id, body).then((res) => {
+    //     console.log(res);
+
+    //     localStorage.setItem("loginUser", JSON.stringify(res.data));
+    //     paginacao(0);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
   }
 
   return (
     <ul className="ListaMusicas">
-      {details.map((item) => {
+      {playlist.map((item, index) => {
         return (
-          <li key={item.id} className="musica">
+          <li key={item.title} className="musica">
             <p className="music-title">{item.title}</p>
-            <audio controls="controls">
-              <source id="musicshow" src={item.file} type="audio/mpeg" />
-              <source id="musicshow" src={item.file} type="audio/ogg" />
-            </audio>
+            <div className="music-display-container">
+              <audio controls="controls">
+                <source id="musicshow" src={item.src} type="audio/mpeg" />
+                <source id="musicshow" src={item.src} type="audio/ogg" />
+              </audio>
+              {!!user && (
+                <button
+                  onClick={(e) => removeMusic(index)}
+                  className="remove-btn"
+                >
+                  -
+                </button>
+              )}
+            </div>
           </li>
         );
       })}
@@ -80,3 +93,14 @@ function List(props) {
 }
 
 export default List;
+// {
+//   "title": "Play1Teste",
+//   "source": "https://i.pinimg.com/564x/16/36/3c/16363c2185780e00c0cbdaa927207e32.jpg",
+//   "description": "descricao",
+//   "musics": [
+//     "Mockinbird - Eminem",
+//     "Amor de Chocolate - Naldo Benny",
+//     "Sing for the Moment - Eminem",
+//     "Quer Voar - Matuê"
+//   ]
+// },

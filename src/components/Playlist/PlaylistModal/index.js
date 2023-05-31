@@ -2,14 +2,19 @@ import { useEffect, useState } from "react";
 import Input from "../../Input";
 import "./styles.scss";
 import axios from "axios";
+import { insertPlaylist } from "../../../util/http";
 
 const PlaylistModal = ({ functionToCloseModal, user }) => {
   const [playlistInfo, setPlaylistInfo] = useState({});
   const [musics, setMusics] = useState([]);
-  const [userPlaylists, setUserPlaylists] = useState([]);
+  const [fetchedMusics, setFetchedMusics] = useState([]);
+  // const [userPlaylists, setUserPlaylists] = useState([]);
 
   useEffect(() => {
-    setUserPlaylists(user.playlists);
+    // setUserPlaylists(user.playlists);
+    axios.get("http://localhost:3000/musicas").then((res) => {
+      setFetchedMusics(res.data.data);
+    });
   }, [user]);
 
   function handleChange(e) {
@@ -19,11 +24,17 @@ const PlaylistModal = ({ functionToCloseModal, user }) => {
 
   function handleMusicSelect(e) {
     if (e.target.checked === true) {
-      setMusics((prevState) => [...prevState, e.target.value]);
+      setMusics((prevState) => [
+        ...prevState,
+        {
+          title: fetchedMusics[e.target.value].title,
+          src: fetchedMusics[e.target.value].src,
+        },
+      ]);
     } else {
       setMusics(
         musics.filter((music) => {
-          return music !== e.target.value;
+          return music.title !== fetchedMusics[e.target.value].title;
         })
       );
     }
@@ -31,28 +42,30 @@ const PlaylistModal = ({ functionToCloseModal, user }) => {
 
   function handleSubmit(e) {
     e.preventDefault(false);
+    console.log(musics);
+    // const playlists = [...userPlaylists, { ...playlistInfo, musicas: musics }];
+    const playlist = { ...playlistInfo, musicas: musics };
 
-    const playlists = [...userPlaylists, { ...playlistInfo, musics }];
+    // let body = {
+    //   ...user,
+    //   playlists,
+    // };
 
-    let body = {
-      ...user,
-      playlists,
-    };
+    console.log(playlist);
 
-    console.log(body);
-    axios
-      .put(`http://localhost:3000/users/${user.id}/`, body)
-      .then((res) => {
-        console.log(res);
-        localStorage.removeItem("loginUser");
-        localStorage.setItem("loginUser", JSON.stringify(body));
-      })
-      .catch((err) => {
-        console.log("err", err);
-      });
+    const response = insertPlaylist(user._id, playlist);
+    // axios
+    //   .put(`http://localhost:3000/users/${user.id}/`, body)
+    //   .then((res) => {
+    //     console.log(res); 
+    //     localStorage.removeItem("loginUser");
+    //     localStorage.setItem("loginUser", JSON.stringify(body));
+    //   })
+    //   .catch((err) => {
+    //     console.log("err", err);
+    //   });
 
     document.getElementById("create-playlist-form").reset();
-    // alert("Playlist criada com sucesso!");
     functionToCloseModal();
   }
 
@@ -80,37 +93,33 @@ const PlaylistModal = ({ functionToCloseModal, user }) => {
             required
           />
           <Input
-            name="source"
-            onChange={handleChange}
-            label="URL da Imagem"
-            placeholder="Insira a URL da imagem."
-            required
-          />
-          <Input
-            name="description"
-            onChange={handleChange}
-            label="Descrição"
-            placeholder="Insira uma breve descrição da Playlist."
-            required
-          />
-          <Input
             name="musics"
             onChange={handleMusicSelect}
             type="checkbox"
-            options={[
-              { value: "Mockinbird - Eminem", label: "Mockinbird" },
-              {
-                value: "Amor de Chocolate - Naldo Benny",
-                label: "Amor de Chocolate",
-              },
-              {
-                value: "Sing for the Moment - Eminem",
-                label: "Sing for the Moment",
-              },
-              { value: "Monster - Eminem", label: "Monster" },
-              { value: "Vampiro - Matuê", label: "Vampiro" },
-              { value: "Quer Voar - Matuê", label: "Quer Voar" },
-            ]}
+            options={
+              fetchedMusics.map((music, index) => {
+                return { value: index, label: music.title };
+              })
+              // [
+              //   { value: "Mockinbird - Eminem", label: "Mockinbird" },
+              //   {
+              //     value: "Amor de Chocolate - Naldo Benny",
+              //     label: "Amor de Chocolate",
+              //     src: "mp3",
+              //   },
+              //   {
+              //     value: "Sing for the Moment - Eminem",
+              //     label: "Sing for the Moment",
+              //     src: "mp3",
+              //   },
+              //   {
+              //     value: 2,
+              //     label: "Monster",
+              //   },
+              //   { value: "Vampiro - Matuê", label: "Vampiro", src: "mp4" },
+              //   { value: "Quer Voar - Matuê", label: "Quer Voar", src: "mp3" },
+              // ]
+            }
             label="Quais músicas você deseja adicionar?"
           />
           <button type="submit" className="PlaylistModal__button-submit">
