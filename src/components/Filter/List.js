@@ -5,7 +5,7 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
 import "./List.css";
-import { editUser } from "../../util/http";
+import { editUser, removeMusicFromPlaylist } from "../../util/http";
 
 function List({ input, musics }) {
   const { id } = useParams();
@@ -45,24 +45,14 @@ function List({ input, musics }) {
   //create a new array by filtering the original array
 
   function removeMusic(index) {
-    const userPlaylist = user.playlists[id - 1].musicas;
-    console.log(userPlaylist);
-    // const filteredPlaylists
-    // playlists[id - 1].musicas.splice(index, 1);
-    // console.log(playlists);
-    // const body = {
-    //   playlists,
-    // };
 
-    // editUser(user._id, body).then((res) => {
-    //     console.log(res);
-
-    //     localStorage.setItem("loginUser", JSON.stringify(res.data));
-    //     paginacao(0);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
+    removeMusicFromPlaylist(user._id, id - 1, index).then((res) => {
+        console.log(res);
+        paginacao(0);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   return (

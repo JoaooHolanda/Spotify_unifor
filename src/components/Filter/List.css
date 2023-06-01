@@ -2,9 +2,17 @@
     display: flex;
 }
 
+.music-title {
+    padding-left: .5rem;
+}
+
 .remove-btn{
     margin-left: 1rem;
     width: 3.25rem;
     border-radius: 1em;
 
+}
+
+.ListaMusicas {
+    margin-top: 1rem;
 }

@@ -27,3 +27,22 @@ export async function insertPlaylist(userId, body) {
   );
   return response.data;
 }
+
+export async function removeMusicFromPlaylist(
+  userId,
+  playlistIndex,
+  musicIndex
+) {
+  const response = await axios.delete(
+    BASE_URL + `/musicas/${userId}/${playlistIndex}/${musicIndex}`
+  );
+  return response.data;
+}
+
+export async function insertMusicIntoPlaylist(userId, playlistIndex, body) {
+  const response = await axios.post(
+    BASE_URL + `/musicas/${userId}/${playlistIndex}`,
+    body
+  );
+  return response.data;
+}
