@@ -39,10 +39,12 @@ export async function removeMusicFromPlaylist(
   return response.data;
 }
 
-export async function insertMusicIntoPlaylist(userId, playlistIndex, body) {
-  const response = await axios.post(
+export function insertMusicIntoPlaylist(userId, playlistIndex, body) {
+  axios.post(
     BASE_URL + `/musicas/${userId}/${playlistIndex}`,
     body
-  );
-  return response.data;
+  ).then((response) => {
+    console.log("Música Recebida "+response.data)
+    return response.data;
+  });
 }

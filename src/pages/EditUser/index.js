@@ -49,7 +49,7 @@ export default function EditUser() {
       date,
     };
     console.log("kahsbash", body);
-    axios.put(`http://localhost:3000/users/${user.id}`, body).then((res) => {
+    axios.put(`http://localhost:3000/users/${user._id}`, body).then((res) => {
       console.log(res);
       localStorage.removeItem("loginUser");
       localStorage.setItem("loginUser", JSON.stringify(body));

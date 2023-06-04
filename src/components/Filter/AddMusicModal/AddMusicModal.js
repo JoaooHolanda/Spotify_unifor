@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Input from "../../Input";
 import { insertMusicIntoPlaylist } from "../../../util/http";
 import { useParams } from "react-router-dom";
-import "./AddMusicModal.css"
+import "./AddMusicModal.css";
 
 const AddMusicModal = ({ functionToClose }) => {
   const [fetchedMusics, setFetchedMusics] = useState([]);
@@ -44,10 +44,7 @@ const AddMusicModal = ({ functionToClose }) => {
     e.preventDefault(false);
     console.log(musics);
 
-    musics.forEach(async (music) => {
-      const response = await insertMusicIntoPlaylist(user._id, id - 1, music);
-      console.log(response);
-    });
+    insertMusicIntoPlaylist(user._id, id - 1, musics);
 
     document.getElementById("add-music-form").reset();
     functionToClose();
@@ -66,7 +63,9 @@ const AddMusicModal = ({ functionToClose }) => {
           label="Quais músicas você deseja adicionar?"
         />
         <div id="buttons-container">
-          <button className="button-cancel" onClick={functionToClose}>Cancelar</button>
+          <button className="button-cancel" onClick={functionToClose}>
+            Cancelar
+          </button>
           <button type="submit" className="button-submit">
             Adicionar Músicas
           </button>
