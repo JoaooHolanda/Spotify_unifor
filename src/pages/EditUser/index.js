@@ -20,9 +20,10 @@ export default function EditUser() {
 
   useEffect(() => {
     var elemento = document.getElementById(user.gender);
-    console.log(elemento.checked);
+    console.log(elemento);
     console.log(user.gender);
-    elemento.checked = true;
+    elemento.checked = true
+    
   }, []);
 
   function Logout() {
@@ -48,7 +49,7 @@ export default function EditUser() {
       date,
     };
     console.log("kahsbash", body);
-    axios.put(`http://localhost:3000/users/${user.id}`, body).then((res) => {
+    axios.put(`http://localhost:3000/users/${user._id}`, body).then((res) => {
       console.log(res);
       localStorage.removeItem("loginUser");
       localStorage.setItem("loginUser", JSON.stringify(body));
@@ -60,7 +61,7 @@ export default function EditUser() {
       {" "}
       <Header links={links} />
       <div className="content">
-        {" "}
+       {" "}
         <div className="card1">
           <form onSubmit={handleSubmit} className="form" id="cadForm">
             <Input
@@ -121,11 +122,11 @@ export default function EditUser() {
                 <input
                   onClick={() => setGender("NaoBinario")}
                   type="radio"
-                  id="NaoBinario"
+                  id="naoBinario"
                   name="gender"
                   value="naoBinario"
                 />
-                <label for="NaoBinario">Não Binario</label>
+                <label for="naoBinario">Não Binario</label>
               </div>
               <div className="options_radio">
                 <input

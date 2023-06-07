@@ -38,6 +38,7 @@ const Cadastro = () => {
       password: infoCad.senha,
       date: infoCad.date,
       gender: infoCad.genero,
+      playlists: [],
     };
 
     console.log(body);
@@ -123,7 +124,7 @@ const Cadastro = () => {
               options={[
                 { value: "Masculino", label: "Masculino" },
                 { value: "Feminino", label: "Feminino" },
-                { value: "NaoBinário", label: "Não binário" },
+                { value: "naoBinario", label: "Não binário" },
                 { value: "Outros", label: "Outros" },
               ]}
               label="Qual é o seu gênero?"

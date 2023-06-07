@@ -47,20 +47,14 @@ export default function Login() {
   }, []);
 
   const onEnterAttempt = useCallback(() => {
+    const body = { email: email, password: senha };
     axios
-      .get("http://localhost:3000/users")
+      .post("http://localhost:3000/login", body)
       .then((res) => {
-        const data = res.data;
-        console.log(data);
-
-        const foundUser = data.filter(
-          (user) => user.email == email && user.password == senha
-        );
-        console.log(foundUser);
-        if (foundUser.length != 0) {
-          localStorage.setItem("loginUser", JSON.stringify(...foundUser));
-          paginacao("/Home");
-        }
+        const user = res.data.data;
+        console.log(user);
+        localStorage.setItem("loginUser", JSON.stringify(user));
+        paginacao("/Home");
       })
       .catch((err) => {
         console.log(err);
